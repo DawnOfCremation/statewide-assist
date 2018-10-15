@@ -125,7 +125,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'statewidera/static/')
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, .'static')
+STATIC_ROOT = os.path.join(BASE_DIR, '/home/statewidera/statewide_project/statewide-assist/static/')
 STATIC_URL = '/static/'
 
 
