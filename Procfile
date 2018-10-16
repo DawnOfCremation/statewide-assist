@@ -1,1 +1,1 @@
-web: gunicorn portfolio.wsgi.py --log-file -
+web: gunicorn statwidera.wsgi.py --log-file -
