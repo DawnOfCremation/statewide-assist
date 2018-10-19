@@ -9,3 +9,7 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html', {'aboutme': 'Lets Count!'})
+
+
+def gethelp(request):
+    return render(request, 'callassistance.html')
