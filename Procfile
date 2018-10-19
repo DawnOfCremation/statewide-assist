@@ -1,1 +1,1 @@
-web: gunicorn statwidera.wsgi.py --log-file -
+web: gunicorn statewidera.wsgi.py --log-file -
