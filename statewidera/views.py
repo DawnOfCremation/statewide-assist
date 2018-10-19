@@ -12,4 +12,4 @@ def about(request):
 
 
 def gethelp(request):
-    return render(request, 'callassistance.html')
+    return render(request, 'callassistance.html' {'help': 'help me!'})
