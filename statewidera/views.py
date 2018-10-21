@@ -11,5 +11,5 @@ def about(request):
     return render(request, 'about.html', {'aboutme': 'Lets Count!'})
 
 
-def callassistance(request):
+def assistance(request):
     return render(request, 'callassistance.html')
