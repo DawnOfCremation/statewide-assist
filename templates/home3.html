@@ -13,7 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{% static 'custom.css' %}">
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
   </head>
@@ -58,42 +58,46 @@
       </div>
     </nav>
 
-    <div class="jumbotron">
-      <div class="container">
-        <br />
-        <img src="{% static 'statewidera/images/statewidelogo_01.png' %}" >
-        <br />
-        <br />
-        <p>24 / 7 ROADSIDE ASSISTANCE COVERING THE WHOLE SYDNEY METROPOLITAN AREA.</p>
-        <h2 class="display-4"><a href="tel:0488602271">CALL TODAY - 0488 602 271</a></h2>
-        <p><a class="btn btn-primary btn-lg" href="{% url 'callassistance' %}" role="button">Request Roadside Assistance &raquo;</a></p>
+    <main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <br />
+          <img src="{% static 'statewidera/images/statewidelogo_01.png' %}" >
+          <br />
+          <br />
+          <p>24 / 7 ROADSIDE ASSISTANCE COVERING THE WHOLE SYDNEY METROPOLITAN AREA.</p>
+          <h2 class="display-4"><a href="tel:0488602271">CALL TODAY - 0488 602 271</a></h2>
+          <p><a class="btn btn-primary btn-lg" href="{% url 'callassistance' %}" role="button">Request Roadside Assistance &raquo;</a></p>
+        </div>
       </div>
-    </div>
 
-
-
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-6">
-          <h4>Statewide Roadside Assistance</h4>
-          <p>
-            <ul class="list-group">
-            <li class="list-group-item"><h6>Post:</h6> PO Box put some postal address here </li>
-            <li class="list-group-item"><h6>Email:</h6> someAddress@email.com.au</li>
-            <li class="list-group-item"><h6>Phone: </h6> 0488 602 271</li>
-            <li class="list-group-item"><h6>Porta</h6> ac consectetur ac</li>
-            <li class="list-group-item"><h6>Vestibulum </h6>at eros</li>
-          </ul>
-           </p>
-          <p><a class="btn btn-secondary" href="mailto:damians@gmail.com" role="button">Email Us &raquo;</a></p>
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Vehicle not starting?</h4>
+            <p> Nine times out of ten the reason is due to a Flat battery. We can get you going again, test your battery and even replace it if needed </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h4>Flat Tyre</h4>
+            <p>Flat Tyre? No problem we'll come and change it with your roadworthy spare. Our drivers are ready 24 hours aday seven days a week they carry all the equipment needed to change or inflate your tyre. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h4>Out of Fuel</h4>
+            <p>Didn't make it to a Fuel station in time? we'll bring out fuel to you  Our drivers are ready 24 hours aday seven days a week. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          </div>
         </div>
 
-      </div>
+        <hr>
 
-      <hr>
+      </div> <!-- /container -->
 
-    </div> <!-- /container -->
+    </main>
 
     <footer class="container">
       <p>&copy; Statewide Roadside Assistance 2017-2018</p>
