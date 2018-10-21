@@ -1,6 +1,9 @@
 {% load static %}
 .jumbotron {
-  background-color: #ffffff;
+
+  background-image: url("/static/statewidera/images/statw_carosel_im_01.jpg");
+
+
 }
 .carousel-item-next,
 .carousel-item-prev,
