@@ -21,32 +21,34 @@
 
 <body class="text-center">
 
-  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-      <div class="inner">
-       <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-        <h3 class="masthead-brand"><a href="tel:0488602271">  0488 602 271</a></h3>
+  <div class="inner">
 
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="{% url 'about' %}">Contact</a>
+    <!-- <h3 class="masthead-brand"><a href="tel:0488602271">  0488 602 271</a></h3>-->
+      <nav class="navbar navbar-dark bg-primary justify-content-center" style="background-color: #e3f2fd;">
+      <!-- <nav class="nav nav-masthead justify-content-center">-->
+        <a class="nav-link" float="left" a href="tel:0488602271"><h3>  0488 602 271</h3></a>
+        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link" href="{% url 'about' %}">Contact</a>
 
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown02">
-                <a class="dropdown-item" href="#">Flat tyre</a>
-                <a class="dropdown-item" href="#">Out of fuel</a>
-                <a class="dropdown-item" href="#">Not starting</a>
-                <a class="dropdown-item" href="#">Battery replacement</a>
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown02">
+            <a class="dropdown-item" href="#">Flat tyre</a>
+            <a class="dropdown-item" href="#">Out of fuel</a>
+            <a class="dropdown-item" href="#">Not starting</a>
+            <a class="dropdown-item" href="#">Battery replacement</a>
 
-              </div>
-            </li>
-          </nav>
+          </div>
+          </li>
         </div>
-      </header>
+      </nav>
 
+
+
+      </header>
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <main role="main" class="inner cover">
 
-            <img src="{% static 'statewidera/images/statewidelogo_lge_white2.png' %}" class="img-fluid" alt="Responsive image">
+            <img src="{% static 'statewidera/images/statewidelogo_lge_blue01.png' %}" class="img-fluid" alt="Responsive image">
             <br />
             <p>
             <br />
@@ -55,6 +57,28 @@
 
               <p><a class="btn btn-primary btn-lg" href="{% url 'callassistance' %}" role="button">Request Roadside Assistance &raquo;</a></p>
             </p>
+
+          <div class="container">
+              <!-- Example row of columns -->
+              <div class="row">
+                <div class="col-md-6">
+                  <h4>Statewide Roadside Assistance</h4>
+                  <p>
+                    <ul class="list-group">
+                    <li class="list-group-item"><h6>Post:</h6> PO Box put some postal address here </li>
+                    <li class="list-group-item"><h6>Email:</h6> someAddress@email.com.au</li>
+                    <li class="list-group-item"><h6>Phone: </h6> 0488 602 271</li>
+                    <li class="list-group-item"><h6>Porta</h6> ac consectetur ac</li>
+                    <li class="list-group-item"><h6>Vestibulum </h6>at eros</li>
+                  </ul>
+                   </p>
+                  <p><a class="btn btn-secondary" href="mailto:damians@gmail.com" role="button">Email Us &raquo;</a></p>
+                </div>
+
+              </div>
+            </div>
+            </div>
+              <hr>
 
       </main>
 
