@@ -1,4 +1,3 @@
-
 <!doctype html>
 {% load static %}
 <html lang="en">
@@ -8,141 +7,117 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'custom.css' %}">
-    <!-- Custom styles for this template -->
 
+    <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="{% static 'custom.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-  <body>
-    <div class="inner">
+  <body style="background-color: #0052cc">
 
-      <!-- <h3 class="masthead-brand"><a href="tel:0488602271">  0488 602 271</a></h3>-->
-        <nav class="navbar navbar-dark bg-primary justify-content-center"float="left" style="background-color: #e3f2fd;">
-        <!-- <nav class="nav nav-masthead justify-content-center">-->
-          <a class="nav-link" float="right" a href="tel:0488602271"><h3>  0488 602 271</h3></a>
-          <a class="nav-link active" href="#">Home</a>
-          <a class="nav-link" href="{% url 'about' %}">Contact</a>
-
-          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown02">
-              <a class="dropdown-item" href="#">Flat tyre</a>
-              <a class="dropdown-item" href="#">Out of fuel</a>
-              <a class="dropdown-item" href="#">Not starting</a>
-              <a class="dropdown-item" href="#">Battery replacement</a>
-
+    <nav class="navbar my-nav navbar-expand-sm  navbar-dark ">
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'statewidera/images/statewidelogo_sml_blue.png' %}" alt="logo" style="width:250px;" href="{% url 'home' %}">
+      </a>
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+            </ul>
             </div>
-            </li>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                  <h3 class="nav-link" href="" data-target="#myModal" data-toggle="modal">0488 602 271</h3>
+              </li>
+            </ul>
           </div>
-        </nav>
+    </nav>
+    <!-- Start jumbotron -->
+    <div class="jumbotron jumbotron-fluid " >
+      <div class="container-fluid" align="center">
+        <img src="{% static 'statewidera/images/statewidelogo_lge_blue0.png' %}" class="img-fluid" alt="Responsive image" >
 
-      <div class="container marketing">
+        <h4 class="ex1">24 / 7 - ROADSIDE ASSISTANCE SYDNEY </h4>
 
+      </div>
+    </div><!-- End jumbotron -->
 
-      <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column container-fluid">
+        <div class="container" >
+          <!-- Example row of columns -->
+          <div class="row">
+            <div class="col-md-12 statewidecont">
+              <h4>24 / 7 ROADSIDE ASSISTANCE COVERING THE WHOLE SYDNEY METROPOLITAN AREA</h4>
+              <br />
+                <h4><small> - Emergency roadside assistance when you need it. No joining fee, No need membership, we offer a premium service to get your back on the road with peace of mind. Just pay as you go. If we are unable to get your vehicle going, we can also help you with organising  your vehicle to be towed to a destination of your choice.</small></h4>
 
+              </div>
+            </div> <!-- /container -->
+            <br />
+            <br />
+              <hr>
+              <br />
+              <div class="container" >
 
+              <div class="row ">
+                <div class="col-sm-4 services"><h4>Roadside Battery replacement service.</h4>
+                </div>
+                <div class="col-sm-8 service-details">
+                    <h4>Roadside Battery replacement </h4><h4><small>All Statewide Roadside Assist rescue vehicles stock a premium range of Batteries to suit all makes and models. We will deliver and install Replacement Batteries anywhere, anytime in the Sydney metropolitan area. We also provide a 2 year replacement warranty on all batteries fitted by a Statewide mobile technicians.</small></h4>
+                </div>
+              </div>
 
-        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-            <main role="main" class="inner cover" align="center">
+              <hr>
+              <div class="row">
+                <div class="col-sm-4 services"><h4>Roadside Flat Battery service.</h4>
+                </div>
+                <div class="col-sm-8 service-details">
+                    <h4>Roadside Flat Battery service </h4><h4><small>If your vehicle is not starting, nine times out of ten it is due to a flat battery. Our service technicians can safely get your vehicle started with a jump start and also test the condition of your current battery.</small></h4>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-4 services"><h4>Roadside Flat tyre service.</h4>
+                </div>
+                <div class="col-sm-8 service-details">
+                    <h4>Roadside Flat tyre service </h4><h4><small>If you have a flat tyre our mobile technicians are able to get you mobile again by changing your flat tyre over with your roadworthy spare tyre. All rescue vans are also equipped with an air compressor if needed, your spare tyre must be of roadworthy condition.</small></h4>
+                </div>
+              </div>
 
-                  <img src="{% static 'statewidera/images/statewidelogo_lge_blue01.png' %}" class="img-fluid" alt="Responsive image">
-                  <br />
-                  <p>
-                  <br />
-                  <p class="lead">24 / 7 Roadside assistance - covering the whole Sydney metropolitan area.</p>
-                  <p class="lead">
+              <hr>
+              <div class="row">
+                <div class="col-sm-4 services"><h4>Roadside Fuel Delivery service.</h4>
+                </div>
+                <div class="col-sm-8 service-details">
+                    <h4>Roadside Fuel Delivery service </h4><h4><small>Run out of fuel? No problem, our service vans are able to carry and deliver up to 10 litres of unleaded or diesel fuel to your location of breakdown. This is enough fuel to safely get you to the closest service station.</small></h4>
+                </div>
+              </div>
 
-                    <div class="row justify-content-md-center">
-                    <h1 class="featurette-heading-phone" a href="tel:0488602271">0488 602 271</a></h1>
-
-                    </div>
-
-
-                    <hr>
-
-            </main>
-
-  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column container-fluid">
-
-
-
-      <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="col-md-4">
-            <h4>Vehicle not starting?</h4>
-            <p> Nine times out of ten the reason is due to a Flat battery. We can get you going again, test your battery and even replace it if needed </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h4>Flat Tyre</h4>
-            <p>Flat Tyre? No problem we'll come and change it with your roadworthy spare. Our drivers are ready 24 hours aday seven days a week they carry all the equipment needed to change or inflate your tyre. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-4">
-            <h4>Out of Fuel</h4>
-            <p>Didn't make it to a Fuel station in time? we'll bring out fuel to you  Our drivers are ready 24 hours aday seven days a week. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-          </div>
-        </div>
-
-
+              <hr>
+              <div class="row">
+                <div class="col-sm-4 services"><h4>Roadside Lockout service.</h4>
+                </div>
+                <div class="col-sm-8 service-details">
+                    <h4>Roadside Lockout service </h4><h4><small>If you have locked your keys in your vehicle Statewide Assist mobile technicians will be able to gain access to your vehicle.</small></h4>
+                </div>
+              </div>
 
       </div> <!-- /container -->
 
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Roadside Battery replacement
-            <br />
-            <span class="text-muted">service.</span></h2>
-          <p class="lead">All Statewide Roadside Assist rescue vehicles stock a premium range of Batteries to suit all makes and models. We will deliver and install Replacement Batteries anywhere, anytime in the Sydney metropolitan area.  We also provide a 2 year replacement warranty on all batteries fitted by a Statewide mobile technicians .</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-fluid mx-auto" src="{% static 'statewidera/images/photo_1breakdown01.jpg' %}" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading">Roadside Flat Battery.
-            <br />
-            <span class="text-muted">service.</span></h2>
-          <p class="lead"> If your vehicle is not starting, nine times out of ten it is due to a flat battery. Our service technicians can safely get your vehicle started with a jump start and also test the condition of your current battery.</p>
-        </div>
-        <div class="col-md-5 order-md-1">
-          <img class="featurette-image img-fluid mx-auto" src="{% static 'statewidera/images/photo_1breakdown02.jpg' %}" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Roadside Flat tyre
-            <br />
-            <span class="text-muted">service.</span></h2>
-          <p class="lead"> If you have a flat tyre our mobile technicians are able to get you mobile again by changing your flat tyre over with your roadworthy spare tyre. All rescue vans are also  equipped with an air compressor if needed, your spare tyre must be of roadworthy condition.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-fluid mx-auto" src="{% static 'statewidera/images/photo_1breakdown03.jpg' %}" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-      <footer class="container">
-        <p>&copy; Statewide Roadside Assistance 2017-2018</p>
-      </footer>
-    </main>
-  </div>
-
+    </div><!-- END class="container-fluid" -->
 
 
     <!-- Bootstrap core JavaScript
