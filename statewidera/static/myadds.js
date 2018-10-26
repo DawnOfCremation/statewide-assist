@@ -9,7 +9,7 @@ function myPost(){
 
 	var originalPost = document.getElementById("checkpost").value;
   if (originalPost){
-    if(originalPost >= 2000 && originalPost <= 2077){
+    if(originalPost >= 2000 && originalPost <= 2770){
 
         document.getElementById("myPostCode").innerHTML = "Your current location is covered call for assistance on 0488602271";
     } else{
