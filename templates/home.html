@@ -7,17 +7,23 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'custom.css' %}">
     <script src="{% static 'myadds.js' %}"></script>
+
     <!-- <link rel="stylesheet" href="{% static 'custom.css' %}">-->
     <!-- Custom styles for this template -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <body style="background-color: #0052cc">
+
+
 
   </head>
 
-  <body style="background-color: #0052cc">
 
+    <a id="top"/>
     <nav class="navbar my-nav navbar-expand-sm  navbar-dark ">
       <!-- Brand/logo -->
       <a class="navbar-brand" href="#">
@@ -27,11 +33,25 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <!-- Navbar links -->
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}" class="sliding-link">Services</a>
+                <!-- <a class="nav-link" ID="top" href="{% url 'home' %}" class="sliding-link">Services</a>-->
+              <div class="dropdown">
+                <button type="button" ID="top" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                  Services
+                </button>
+                <div class="dropdown-menu bg-primary ">
+                    <a class="dropdown-item statewidecont scroll" href="#newbat">Battery replacement</a>
+                    <a class="dropdown-item statewidecont scroll" href="#flatbat">Flat Battery</a>
+                    <a class="dropdown-item statewidecont scroll" href="#tyre">Flat tyre</a>
+                    <a class="dropdown-item statewidecont scroll" href="#fuel">Fuel Delivery</a>
+                    <a id="top" class="scroll dropdown-item statewidecont " href="#bottom">Lockout</a>
+                  </div>
+                </div>
+
               </li>
 
               <li class="nav-item">
@@ -46,12 +66,13 @@
             </ul>
           </div>
     </nav>
+
     <!-- Start jumbotron -->
     <div class="jumbotron jumbotron-fluid " >
       <div class="container-fluid" align="center">
         <img src="{% static 'statewidera/images/statewidelogo_lge_blue0.png' %}" class="img-fluid" alt="Responsive image" >
 
-        <h4 class="ex1">24 / 7 - ROADSIDE ASSISTANCE SYDNEY </h4>
+        <h4 class="ex2">24 / 7 - ROADSIDE ASSISTANCE SYDNEY </h4>
 
       </div>
     </div><!-- End jumbotron -->
@@ -90,14 +111,14 @@
 
               <hr>
 
-              <div class="container " >
+              <div class="container" >
 
               <div class="row serv-marg" >
                 <div class="col-sm-2 cont-marg2"><img src="{% static 'statewidera/images/icon_battery_new.png' %}" class="img-fluid" alt="Responsive image" >
                 </div>
                 <div class="col-sm-10 services ">
 
-                    <h4>Roadside Battery replacement </h4><h4><small>All Statewide Roadside Assist rescue vehicles stock a premium range of Batteries to suit all makes and models. We can deliver and install replacement batteries anywhere, anytime in the Sydney metropolitan area.</small></h4>
+                    <h4 id="newbat">Roadside Battery replacement </h4><h4><small>All Statewide Roadside Assist rescue vehicles stock a premium range of Batteries to suit all makes and models. We can deliver and install replacement batteries anywhere, anytime in the Sydney metropolitan area.</small></h4>
                 </div>
               </div>
 
@@ -106,7 +127,7 @@
                 <div class="col-sm-2 cont-marg2"><img src="{% static 'statewidera/images/icon_battery_flat.png' %}" class="img-fluid" alt="Responsive image" >
                 </div>
                 <div class="col-sm-10 services">
-                    <h4>Roadside Flat Battery service </h4><h4><small>Our service technicians will safely get your vehicle started with a jump start and can also test the condition of your current battery.</small></h4>
+                    <h4 id="flatbat">Roadside Flat Battery service </h4><h4><small>Our service technicians will safely get your vehicle started with a jump start and can also test the condition of your current battery.</small></h4>
                 </div>
               </div>
               <hr>
@@ -114,7 +135,7 @@
                 <div class="col-sm-2 cont-marg2"><img src="{% static 'statewidera/images/icon_tyre_change.png' %}" class="img-fluid" alt="Responsive image" >
                 </div>
                 <div class="col-sm-10 services">
-                    <h4>Roadside Flat tyre service </h4><h4><small> If you have a flat tyre our mobile technicians are able to get you mobile again by changing your flat tyre over with your roadworthy spare tyre. All rescue vans are also  equipped with an air compressor if needed. Your spare tyre must be of roadworthy condition.</small></h4>
+                    <h4 id="tyre">Roadside Flat tyre service </h4><h4><small> If you have a flat tyre our mobile technicians are able to get you mobile again by changing your flat tyre over with your roadworthy spare tyre. All rescue vans are also  equipped with an air compressor if needed. Your spare tyre must be of roadworthy condition.</small></h4>
                 </div>
               </div>
 
@@ -123,7 +144,7 @@
                 <div class="col-sm-2 cont-marg2"><img src="{% static 'statewidera/images/icon_fuel.png' %}" class="img-fluid" alt="Responsive image" >
                 </div>
                 <div class="col-sm-10 services">
-                    <h4>Roadside Fuel Delivery service </h4><h4><small>Run out of fuel? No problem, our service vans are able to carry and deliver up to 10 litres of unleaded or diesel fuel to the location of breakdown. This is enough fuel to safely get you to the closest service station.</small></h4>
+                    <h4 id="fuel">Roadside Fuel Delivery service </h4><h4><small>Run out of fuel? No problem, our service vans are able to carry and deliver up to 10 litres of unleaded or diesel fuel to the location of breakdown. This is enough fuel to safely get you to the closest service station.</small></h4>
                 </div>
               </div>
 
@@ -132,10 +153,12 @@
                 <div class="col-sm-2 cont-marg2"><img src="{% static 'statewidera/images/icon_lockout.png' %}" class="img-fluid" alt="Responsive image" >
                 </div>
                 <div class="col-sm-10 services">
+                  <a href="#top" class="scroll" id="bottom">top</a>
                     <h4>Roadside Lockout service </h4><h4><small>If you have locked your keys in your vehicle Statewide Assist mobile technicians will be able to gain access to your vehicle.</small></h4>
                 </div>
               </div>
             <hr>
+            <a class="nav-link" ID="top" href="#top" class="sliding-link">Back to top</a>
 <br />
 <br />
 
@@ -256,6 +279,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 
 
   </body>
