@@ -14,10 +14,10 @@ def emailView(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             subject = form.cleaned_data['subject']
-            from_email = form.cleaned_data['from_email']
+            your_email = form.cleaned_data['your_email']
             message = form.cleaned_data['message']
             try:
-                send_mail(subject, message, from_email, ['damians@gmail.com'],
+                send_mail(subject, message, your_email, ['damians@gmail.com'],
                 fail_silently=False)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
