@@ -1,5 +1,6 @@
 <!doctype html>
   <!-- {% load static %} -->
+  {% load crispy_forms_tags %}
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -60,17 +61,33 @@
                     <hr class="myhr">
                     <h2 class="ex1 statewidecont">24 hr PH: 0488 602 271</h2>
             </div>
-            <div class="col-sm-6 cont-marg1">
+            <div class="col-sm-6">
               <div class="card-body">
-              <h5 class="card-title">Thanks for contacting us</h5>
-              <p class="card-text">We will reply within 24hrs.</p>
-              <hr class="myhr">
-              <form action="{% url 'home' %}">
-                <button class="btn" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Return Home</button>
-              </form>
-              <br />
+              <h1 class="mt-2">Contact Us</h1>
+              <p class="card-text">Send us an email and we'll get back to you within 24hrs.</p>
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-8">
 
-                <div class="card-header" style="margin-top:30px">or Call us 24/7 on 0488 602 271 </div>
+                    <hr class="mt-0 mb-4">
+                    {% block content %}
+                    <form method="post">
+                        {% csrf_token %}
+
+                        {{ form|crispy }}
+                        <div class="form-actions">
+                          <!--<button type="submit">Send</button>-->
+                          <button class="btn" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                        </div>
+                        <br />
+                    </form>
+
+
+                    {% endblock %}
+                  </div>
+                </div>
+              </div>
+                <div class="card-header">or Call us 24/7 on 0488 602 271 </div>
               </div>
             </div>
           </div>

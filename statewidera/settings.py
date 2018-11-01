@@ -25,12 +25,15 @@ SECRET_KEY = '#kvhlbu+@m17anoj)wx_4+6=2&pe49-5q3va_$86%l&@4bwn*='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+
 ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'contact.apps.ContactConfig',
     'getassist.apps.GetassistConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,9 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'crispy_forms',
 
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
