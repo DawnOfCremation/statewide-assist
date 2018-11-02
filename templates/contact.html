@@ -14,7 +14,7 @@
 
   </head>
 
-  <body style="background-color: #0052cc">
+  <body style="background-color: #007bff">
 
     <nav class="navbar contact-nav navbar-expand-sm  navbar-dark ">
       <!-- Brand/logo -->
@@ -33,7 +33,7 @@
               </li>
 
               <li class="nav-item active">
-                <a class="nav-link" >Contact Us</a>
+                <a class="nav-link" href="{% url 'email' %}">Contact Us</a>
               </li>
             </ul>
             </div>
@@ -66,7 +66,8 @@
               <p class="card-text">We will reply within 24hrs.</p>
               <hr class="myhr">
               <form action="{% url 'home' %}">
-                <button class="btn" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Return Home</button>
+                <!--<button class="btn" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Return Home</button>-->
+                <input class="btn btn-warning" type="submit" value="Return Home">
               </form>
               <br />
 

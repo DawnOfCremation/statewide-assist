@@ -76,14 +76,16 @@
 
                         {{ form|crispy }}
                         <div class="form-actions">
-                          <!--<button type="submit">Send</button>-->
-                          <button class="btn" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+
+                          <!--<button class="btn" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>-->
+                          <input class="btn btn-warning" name="submit" type="submit" id="contact-submit" value="Submit" data-submit="...Sending">
+
                         </div>
                         <br />
                     </form>
                     {% endblock %}
 
-                
+
               </div>
                 <div class="card-header">or Call us 24/7 on 0488 602 271 </div>
               </div>
