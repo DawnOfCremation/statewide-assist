@@ -1,76 +1,39 @@
 <!doctype html>
+{% extends 'base.html' %}
 {% load static %}
-  {% load crispy_forms_tags %}
-<html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Statewide RSA</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'custom.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'custom.css' %}">-->
-    <!-- Custom styles for this template -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  </head>
-
-  <body style="background-color: #007bff">
-
-    <nav class="navbar contact-nav navbar-expand-sm  navbar-dark ">
-      <!-- Brand/logo -->
-      <a class="navbar-brand" href="{% url 'home' %}">
-        <img src="{% static 'statewidera/images/statewidelogo_sml_blue.png' %}" alt="logo" style="width:250px;">
-      </a>
-      <!-- Toggler/collapsibe Button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- Navbar links -->
-          <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}" class="sliding-link">Home</a>
-              </li>
-
-              <li class="nav-item active">
-                <a class="nav-link" >Contact Us</a>
-              </li>
-            </ul>
-            </div>
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                  <h3 class="nav-link" href="" data-target="#myModal" data-toggle="modal">0488 602 271</h3>
-              </li>
-            </ul>
-
-          </div>
-
-    </nav>
+{% load crispy_forms_tags %}
 
 
-    <div class="container-fluid" align="center">
+{% block content %}
+<div class="faceb">
+  <a  href="#about"><i class="fab fa-facebook fa-2x"></i></a>
+  <a  href="{% url 'email' %}"><i class="fas fa-envelope-square fa-2x"></i></a>
+</div>
 
-      <div class="card-header text-white bg-primary" >
-        <div class="container ">
 
-          <div class="row">
-            <div class="col-sm-6 cont-marg1">
-              <img src="{% static 'statewidera/images/statewidelogo_lge_blue0w.png' %}" class="img-fluid" alt="Responsive image" >
-                    <h4 class="ex1 statewidecont">ROADSIDE ASSISTANCE SYDNEY </h4>
-                    <hr class="myhr">
-                    <h2 class="ex1 statewidecont">24 hr PH: 0488 602 271</h2>
-            </div>
-            <div class="col-sm-6">
+
+      <div class="container" align="center">
+
+
+
+
+
+<!------------------------------------------->
+      <div class="grid-contact">
+          <div class="contact-item">
+            <img src="{% static 'statewidera/images/statewidelogo_lrg_black.png' %}" class="img-fluid" alt="Responsive image" >
+            <br />
+            <br />
+            <div class="card h-80 text-white bg-info ">
+              <div class="card-header">
+                <h2 class="ext"><small>ROADSIDE ASSISTANCE SYDNEY</small></h2>
+              </div>
               <div class="card-body">
-              <h1 class="mt-2">Contact Us</h1>
-              <p class="card-text">Send us an email and we'll get back to you within 24hrs.</p>
-              <div class="container">
-
-
-
+                <h5 class="card-title">24 hr PH:<a href="tel:0488602271" class="phcolor"> 0488 602 271</a></h5>
+                <div class="postsearch" >
+                  <p class="card-text">
                     <hr class="mt-0 mb-4">
-                    {% block content %}
+                    {% block eml %}
                     <form method="post">
                         {% csrf_token %}
 
@@ -84,130 +47,44 @@
                         <br />
                     </form>
                     {% endblock %}
+                </div
+                </p>
 
-
-              </div>
-                <div class="card-header">or Call us 24/7 on 0488 602 271 </div>
               </div>
             </div>
+            <br />
+            </div>
           </div>
-        </div>
-
-
       </div>
+<!------------------------------------------->
 
     </div>
 
-    <!-- Footer -->
-    <footer class="page-footer font-small unique-color-dark">
 
-        <div style="background-color: #142a52;">
-          <div class="container">
 
-            <!-- Grid row-->
-            <div class="row py-4 d-flex align-items-center">
-              <!-- Grid column -->
-              <div class="col-md-12 text-center ">
-                  <img src="{% static 'statewidera/images/statewidelogo_sml_blue.png' %}" alt="logo" style="width:250px;">
+      <div class="ext5"><!--beginning of grey seperator-->
+        <div class="cover-container  container-fluid" >
 
+          <div class="container ext2" >
+
+      <div class="paymentmthd">
+        <div><h5>Payment methods:</h5></div>
+        <hr class="paymenthr">
+        <div class="nested">
+                <div>
+                  <img src="/static/statewidera/images/visa.png" alt="visa">
+                </div>
+                <div>
+                  <img src="/static/statewidera/images/MasterCard-Logo.png" alt="master card">
+                </div>
+                <div>
+                  <img src="/static/statewidera/images/eftposLogo.png" alt="eftpos">
+                </div>
               </div>
-              <!-- Grid column -->
-            </div>
-            <!-- Grid row-->
-
           </div>
-
-
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left mt-5">
-
-          <!-- Grid row -->
-          <div class="row mt-3">
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
-              <!-- Content -->
-              <h6 class="text-uppercase font-weight-bold footer-links">STATEWIDE ROADSIDE ASSISTANCE</h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto " style="width: 60px;">
-              <p class="footer-links">call for assistance on:</p>
-              <h6 class="footer-links">0488 602 271</h6>
-              <p>
-
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-              <!-- Links -->
-
-                <a href="#!"> </a>
-                <p class="footer-links">Mobile eftpost available</p>
-              </p>
-              <p>
-
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 ">
-
-              <!-- Links -->
-
-
-              </p>
-              <p>
-
-
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-              <!-- Links -->
-              <h6 class="text-uppercase font-weight-bold footer-links">Contact Us</h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-
-                <p class="fa fa-home mr-3 footer-links"></i> Sydney, New South Wales</p>
-              <p>
-                <p class="fa fa-envelope mr-3 footer-links"></i> statewidera@gmail.com</p>
-              <p>
-                <p class="fa fa-phone mr-3 footer-links"></i>  0488 602 271</p>
-              <p>
-
-
-            </div>
-            <!-- Grid column -->
-
           </div>
-          <!-- Grid row -->
-
-        </div>
-        <!-- Footer Links -->
-
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3 services"><p>&copy; Statewide Roadside Assistance 2017-2018</p>
-        </div>
-        <!-- Copyright -->
-      </div>
-      </footer>
-      <!-- Footer -->
+          </div>
+        </div ><!--end of grey seperator-->
 
 
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
-  </body>
-</html>
+{% endblock %}

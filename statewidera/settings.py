@@ -29,12 +29,23 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'dawnofcremation'
+EMAIL_HOST_PASSWORD = 'evildead666'
+SENDGRID_API_KEY = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
+
+ADMIN_SITE_HEADER = "Statewide Administration"
 # Application definition
 
 INSTALLED_APPS = [
+    'faq.apps.FaqConfig',
+    'service.apps.ServiceConfig',
+    'postcode.apps.PostcodeConfig',
     'contact.apps.ContactConfig',
-    'getassist.apps.GetassistConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

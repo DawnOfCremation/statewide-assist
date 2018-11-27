@@ -1,0 +1,109 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% load static %}
+<!--<html lang="en">-->
+{% block content %}
+<div class="faceb">
+  <a  href="#about"><i class="fab fa-facebook fa-2x"></i></a>
+  <a  href="{% url 'email' %}"><i class="fas fa-envelope-square fa-2x"></i></a>
+</div>
+
+
+
+<div class="container">
+  <div class="jumb2">
+    <div class="jumb-item1">
+      <div class="card" style="width: 18rem;">
+        {% for service in services.all %}
+          {% if service.id == myid %}
+          <img class="card-img-top" src="{{ service.image.url }}" alt="Card image cap">
+          {% endif %}
+        {% endfor %}
+        <div class="card-body ">
+          <h5 class="card-title">
+
+            {% for service in services.all %}
+              {% if service.id == myid %}
+                  {{ service.title }}
+
+              {% endif %}
+            {% endfor %}
+          </h5>
+          <p class="card-text">
+            {% for service in services.all %}
+              {% if service.id == myid %}
+                  {{ service.service_info_short }}
+              {% endif %}
+            {% endfor %}
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> <i class="fas fa-credit-card fa-2x"></i>  <i class="fab fa-cc-visa fa-2x"></i>  <i class="fab fa-cc-mastercard fa-2x"></i></li>
+          <li class="list-group-item">24hr / 7 days <i class="fas fa-check" style="color:green;"></i> </li>
+        </ul>
+        <div class="card-body cbodlink">
+
+          <a href="tel:0488602271" class="text-success"><i class="fa fa-phone" aria-hidden="true"></i>Call now</a>
+        </div>
+      </div>
+    </div>
+      <div class="jumb-item2">
+        <div class="card border-light h-600">
+          <div class="card-header">
+
+            {% for service in services.all %}
+              {% if service.id == myid %}
+                  <h1>{{ service.title }}</h1>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Covering the whole Sydney metropolitan area.</h4>
+            <p class="card-text">
+              {% for service in services.all %}
+                {% if service.id == myid %}
+                    {{ service.service_info_long }}
+                {% endif %}
+              {% endfor %}
+              <br>
+            <hr>
+                <h5 class="text-danger"><i>No joining fee, No membership. we offer a premium service at competitive rates to get you back on the road as fast as possible.</i></h5>
+                <br>
+                <p>Check if we cover your area <a href="{% url 'home' %}" class="text-secondary">here <i class="fas fa-caret-right"></i></a></p>
+              <hr>
+            <a href="{% url 'faq' %}"  class="btn btn-secondary" >Frequently asked questions</a>
+              <hr>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="jumb-item3">
+
+
+        <div class="card border-light text-right " style="width: 18rem; margin-top: 100px;">
+          <div class="card-body">
+            <h4 class="card-title">Other Services</h4>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="{% url 'serviceGen' %}">General Assistance <i class="fas fa-wrench"></a></i></li>
+              <li class="list-group-item"><a href="{% url 'serviceBat' %}">Battery Replacement <i class="fas fa-car-battery"></a></i></li>
+              <li class="list-group-item"><a href="{% url 'serviceJump' %}">Jump Start <i class="fas fa-bolt"></i></a></li>
+              <li class="list-group-item"><a href="{% url 'serviceFlat' %}">Flat tyre <i class="fas fa-car-alt"></i></a></li>
+              <li class="list-group-item"><a href="{% url 'serviceFuel' %}">Fuel Supply <i class="fas fa-gas-pump"></i></a></li>
+              <li class="list-group-item"><a href="{% url 'serviceLock' %}">Lockout <i class="fas fa-unlock"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}

@@ -1,292 +1,121 @@
 <!doctype html>
+{% extends 'base.html' %}
 {% load static %}
-<html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Statewide RSA</title>
+<!--<html lang="en">-->
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static 'custom.css' %}">
-    <script src="{% static 'myadds.js' %}"></script>
-
-    <!-- <link rel="stylesheet" href="{% static 'custom.css' %}">-->
-    <!-- Custom styles for this template -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <body style="background-color: #0052cc">
-
-
-
-  </head>
-
-
-  <a id="top"/>
-  <nav class="navbar my-nav navbar-expand-sm  navbar-dark ">
-    <!-- Brand/logo -->
-    <a class="navbar-brand" href="#">
-      <img src="/static/statewidera/images/statewidelogo_sml_blue.png" alt="logo" style="width:250px;">
-    </a>
-    <!-- Toggler/collapsibe Button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <!-- <a class="nav-link" ID="top" href="/" class="sliding-link">Services</a>-->
-            <div class="dropdown">
-              <button type="button" ID="top" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                Services
-              </button>
-              <div class="dropdown-menu bg-primary ">
-                  <a class="dropdown-item statewidecont scroll" href="#newbat">Battery replacement</a>
-                  <a class="dropdown-item statewidecont scroll" href="#flatbat">Flat Battery</a>
-                  <a class="dropdown-item statewidecont scroll" href="#tyre">Flat tyre</a>
-                  <a class="dropdown-item statewidecont scroll" href="#fuel">Fuel Delivery</a>
-                  <a id="top" class="scroll dropdown-item statewidecont " href="#lock">Lockout</a>
-                </div>
-              </div>
-
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'email' %}">Contact Us</a>
-            </li>
-          </ul>
-          </div>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <h3 class="nav-link" href="" data-target="#myModal" data-toggle="modal">0488 602 271</h3>
-            </li>
-          </ul>
-        </div>
-  </nav>
-
-    <!-- Start jumbotron -->
-    <div class="jumbotron jumbotron-fluid " >
-      <div class="container-fluid" align="center">
-        <img src="{% static 'statewidera/images/statewidelogo_lge_blue0.png' %}" class="img-fluid" alt="Responsive image" >
-
-        <h4 class="ex2">24 / 7 - ROADSIDE ASSISTANCE SYDNEY </h4>
-
+{% block content %}
+      <div class="faceb">
+        <a  href="#about"><i class="fab fa-facebook fa-2x"></i></a>
+        <a  href="{% url 'email' %}"><i class="fas fa-envelope-square fa-2x"></i></a>
       </div>
-    </div><!-- End jumbotron -->
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column container-fluid" >
-          <div class="container" >
-            <!-- Example row of columns -->
-            <div class="row myrow" >
-              <div class="col-md-10 services mt-5">
-                <h4>24 / 7 ROADSIDE ASSISTANCE COVERING THE WHOLE SYDNEY METROPOLITAN AREA</h4>
-                <br />
-                  <h4><small>Emergency roadside assistance when you need it. No joining fee, No membership, we offer a premium service to get you back on the road with peace of mind. Just pay as you go. If we are unable to get your vehicle going, we will also help with organising your vehicle to be towed to a destination of your choice if needed.</small></h4>
 
-                </div>
-                <div class="col-sm-2 services mt-5">
-                  <div class="card text-white bg-primary mb-3" style="width: 18rem;">
-                    <div class="card-body ">
-                      <h5 class="card-title">POST CODE SEARCH</h5>
-                      <p class="card-text">
-                        <div class="postsearch" >
-                        <p id="myPostCode" >
-                            <script>myFunct()</script>
-                        </p>
+      <div class="cover-container  container-fluid" >
+                <div class="container" >
+                    <!-- Example row of columns -->
+
+
+                  <div class="jumb">
+                    <div class="jumb-item1">
+                      <div class="card border-light ">
+                        <div class="card-header">
+                          <h1>24 / 7 ROADSIDE ASSISTANCE</h1>
+                        </div>
+                        <div class="card-body">
+                          <h4 class="card-title">Covering the whole Sydney metropolitan area.</h4>
+                          <p class="card-text">Emergency roadside assistance when you need it. <br>No joining fee, No membership. we offer a premium service at compedative rates to get you back on the road as fast as possible. <h5 class="text-danger">Pay as you go</h5> Giving you that peace mind knowing we are just a call away 24hrs a day, 7 days a week. If we are unable to get your vehicle going, we will also help with organising your vehicle to be towed to a destination of your choice if needed.</p>
+
+                        </div>
                       </div>
-                      <form class="card p-2 text-white bg-primary">
-                          <div class="input-group">
-                            <input type="text" class="form-control" id="checkpost" placeholder="Post code here">
-                            <div class="input-group-append">
-                              <button type="button" id="postcodebut" data-delay=5 class="btn btn-secondary" onmouseup="myPost()">Check</button>
-                            </div>
+                    </div>
+                    <div class="jumb-item2">
+                        <div class="card h-80 text-white bg-info ">
+                          <div class="card-header">
+                            <h2 class="ext"><small>POST CODE SEARCH</small></h2>
                           </div>
-                        </form>
+                          <div class="card-body">
+                            <h5 class="card-title">Check your Post code</h5>
+                            <div class="postsearch" >
+                              <p class="card-text">
+                                <h6>{{ verdict }}</h6>
+                              </p>
+                            </div>
+
+                            <form action="{% url 'myview' %}" class="card p-2 bg-light text-dark">
+                              <div class="input-group">
+                                <input type="number"  class="form-control" id="checkpost" name="fulltext" placeholder="Post code here">
+                                <div class="input-group-append">
+                                  <button type="submit" class="btn btn-secondary" onmouseup="myPost()">Check</button>
+                                </div>
+                              </div>
+                            </form>
+
+
+
+                          </div>
+                        </div>
+
+                        <hr>
+                      <a href="{% url 'faq' %}" class="btn btn-secondary" >Frequently asked questions</a>
+                        <hr>
                     </div>
-                    </div>
-                </div>
 
-              </div> <!-- /container -->
-
-
-
-
-
-              <hr>
-
-              <div class="container" >
-
-              <div class="row serv-marg" >
-                <div class="col-sm-2 cont-marg2"><img src="{% static 'statewidera/images/icon_battery_new.png' %}" class="img-fluid" alt="Responsive image" >
-                </div>
-                <div class="col-sm-10 services ">
-
-                    <h4 id="newbat">Roadside Battery replacement </h4><h4><small>All Statewide Roadside Assist rescue vehicles stock a premium range of Batteries to suit all makes and models. We can deliver and install replacement batteries anywhere, anytime in the Sydney metropolitan area.</small></h4>
+                  </div>
                 </div>
               </div>
 
-              <hr>
-              <div class="row serv-marg">
-                <div class="col-sm-2 cont-marg2"><img src="{% static 'statewidera/images/icon_battery_flat.png' %}" class="img-fluid" alt="Responsive image" >
-                </div>
-                <div class="col-sm-10 services">
-                    <h4 id="flatbat">Roadside Flat Battery service </h4><h4><small>Our service technicians will safely get your vehicle started with a jump start and can also test the condition of your current battery.</small></h4>
-                </div>
-              </div>
-              <hr>
-              <div class="row serv-marg">
-                <div class="col-sm-2 cont-marg2"><img src="{% static 'statewidera/images/icon_tyre_change.png' %}" class="img-fluid" alt="Responsive image" >
-                </div>
-                <div class="col-sm-10 services">
-                    <h4 id="tyre">Roadside Flat tyre service </h4><h4><small> If you have a flat tyre our mobile technicians are able to get you mobile again by changing your flat tyre over with your roadworthy spare tyre. All rescue vans are also  equipped with an air compressor if needed. Your spare tyre must be of roadworthy condition.</small></h4>
-                </div>
-              </div>
 
-              <hr>
-              <div class="row serv-marg">
-                <div class="col-sm-2 cont-marg2"><img src="{% static 'statewidera/images/icon_fuel.png' %}" class="img-fluid" alt="Responsive image" >
-                </div>
-                <div class="col-sm-10 services">
-                    <h4 id="fuel">Roadside Fuel Delivery service </h4><h4><small>Run out of fuel? No problem, our service vans are able to carry and deliver up to 10 litres of unleaded or diesel fuel to the location of breakdown. This is enough fuel to safely get you to the closest service station.</small></h4>
-                </div>
-              </div>
-
-              <hr>
-              <div class="row serv-marg">
-                <div class="col-sm-2 cont-marg2"><img src="{% static 'statewidera/images/icon_lockout.png' %}" class="img-fluid" alt="Responsive image" >
-                </div>
-                <div class="col-sm-10 services">
-
-                    <h4 id="lock">Roadside Lockout service </h4><h4><small>If you have locked your keys in your vehicle Statewide Assist mobile technicians will be able to gain access to your vehicle.</small></h4>
-                </div>
-              </div>
-            <hr>
-            <a class="nav-link" ID="top" href="#top" class="sliding-link">Back to top</a>
-<br />
-<br />
-
-
-      </div> <!-- /container -->
-
-
-
-
-    </div><!-- END class="container-fluid" -->
-</div>
-    <!-- Footer -->
-    <footer class="page-footer font-small unique-color-dark">
-
-        <div style="background-color: #142a52;">
+        <div class="ext3"><!--beginning of grey seperator-->
           <div class="container">
+            <h4 class="services-head">SERVICES</h4>
+          </div>
+          <div class="cover-container  container-fluid" >
 
-            <!-- Grid row-->
-            <div class="row py-4 d-flex align-items-center">
-              <!-- Grid column -->
-              <div class="col-md-12 text-center ">
-                  <img src="{% static 'statewidera/images/statewidelogo_sml_blue.png' %}" alt="logo" style="width:250px;">
+            <div class="container ext2">
+          <div class="wrapper"><!--beginning of wrapper-->
+            {% for service in services.all %}
 
+            <div>
+              <div class="card  h-100" >
+                <img class="card-img-top" src="{{ service.image.url }}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{ service.title }}</h5>
+                  <p class="card-text">{{ service.home_info }}
+                    <br>
+                    <a href="{% url 'servicesMore' id=service.id %}" class="text-secondary">More <i class="fas fa-caret-right"></i></a></p>
+                </div>
+
+
+                <div class="card-body cbodlink">
+                  <a href="{% url 'email' %}" class="text-secondary"><i class="fas fa-envelope-square"></i>Enquire</a>
+                  <a href="tel:0488602271" class="text-success"><i class="fa fa-phone" aria-hidden="true"></i>Call now</a>
+                </div>
               </div>
-              <!-- Grid column -->
             </div>
-            <!-- Grid row-->
+            {% endfor %}
 
+
+          </div><!--end of wrapper-->
+          <div class="paymentmthd">
+            <div><h5>Payment methods:</h5></div>
+            <hr class="paymenthr">
+            <div class="nested">
+                <div>
+                  <img src="/static/statewidera/images/visa.png" alt="visa">
+                </div>
+                <div>
+                  <img src="/static/statewidera/images/MasterCard-Logo.png" alt="master card">
+                </div>
+                <div>
+                  <img src="/static/statewidera/images/eftposLogo.png" alt="eftpos">
+                </div>
+              </div>
           </div>
-
-
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left mt-5">
-
-          <!-- Grid row -->
-          <div class="row mt-3">
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
-              <!-- Content -->
-              <h6 class="text-uppercase font-weight-bold footer-links">STATEWIDE ROADSIDE ASSISTANCE</h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto " style="width: 60px;">
-              <p class="footer-links">call for assistance on:</p>
-              <h6 class="footer-links">0488 602 271</h6>
-              <p>
-
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-              <!-- Links -->
-
-                <a href="#!"> </a>
-                <p class="footer-links">Mobile eftpost available</p>
-              </p>
-              <p>
-
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 ">
-
-              <!-- Links -->
-
-
-              </p>
-              <p>
-
-
-
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-              <!-- Links -->
-              <h6 class="text-uppercase font-weight-bold footer-links">Contact Us</h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-
-                <p class="fa fa-home mr-3 footer-links"></i> Sydney, New South Wales</p>
-              <p>
-                <p class="fa fa-envelope mr-3 footer-links"></i> statewidera@gmail.com</p>
-              <p>
-                <p class="fa fa-phone mr-3 footer-links"></i>  0488 602 271</p>
-              <p>
-
-
-            </div>
-            <!-- Grid column -->
-
           </div>
-          <!-- Grid row -->
-
-        </div>
-        <!-- Footer Links -->
-
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3 services"><p>&copy; Statewide Roadside Assistance 2017-2018</p>
-        </div>
-        <!-- Copyright -->
-      </div>
-      </footer>
-      <!-- Footer -->
+          </div>
+        </div ><!--end of grey seperator-->
 
 
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
-
-  </body>
-</html>
+{% endblock %}
