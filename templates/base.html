@@ -4,6 +4,15 @@
 <!--<html lang="en">-->
 <html>
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1382730-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-1382730-2');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Statewide RSA</title>
@@ -25,34 +34,43 @@
   <body>
 
     <div class="top-container" id="background">
-        <img src="/static/statewidera/images/statewidelogo_lrg_red.png" style="width:400px;">
+        <img src="/static/statewidera/images/statewidelogo_lrg_red.png">
         <!--<h1 class="services-head" style="text-align: right; text-align: bottom">0488 602 271</h1>-->
     </div>
 
-    <div class="topnav " id="myTopnav" >
-      <a href="{% url 'home' %}" class="active"><i class="fa fa-fw fa-home"></i>Home</a>
-      <a href="{% url 'email' %}"><i class="fas fa-envelope"></i>Contact</a>
-      <div class="dropdown">
-        <button class="dropbtn"><i class="fa fa-wrench" aria-hidden="true"></i>Services
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content font-weight-bold">
-          <a href="{% url 'services' %}" >All Services</a>
-          <a href="{% url 'serviceGen' %}">General Assistance</a>
-          <a href="{% url 'serviceBat' %}">Battery replacement</a>
-          <a href="{% url 'serviceJump' %}">Jump starts</a>
-          <a href="{% url 'serviceFlat' %}">Flat Tyre</a>
-          <a href="{% url 'serviceFuel' %}">Fuel Supply</a>
-          <span class="divider"></span>
-          <a href="{% url 'serviceLock' %}">Lockout</a>
-        </div>
-      </div>
+      <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+           <i class="fas fa-bars"></i>
+       </span>
+        <!--<a href="#" class="logo">logo</a>-->
+        <ul class="main-nav" id="js-menu">
+            <li>
+                <a href="{% url 'home' %}" class="nav-links"><i class="fas fa-home"></i>Home</a>
+            </li>
+            <li>
+              <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn"><i class="fa fa-wrench"></i>Services<i class="fa fa-caret-down"></i>
+            </button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a class="dropdown-item" href="{% url 'services' %}" >All Services</a>
+                  <a class="dropdown-item" href="{% url 'serviceGen' %}">General Assistance</a>
+                  <a class="dropdown-item" href="{% url 'serviceBat' %}">Battery replacement</a>
+                  <a class="dropdown-item" href="{% url 'serviceJump' %}">Jump starts</a>
+                  <a class="dropdown-item" href="{% url 'serviceFlat' %}">Flat Tyre</a>
+                  <a class="dropdown-item" href="{% url 'serviceFuel' %}">Fuel Supply</a>
+                  <a class="dropdown-item" href="{% url 'serviceLock' %}">Lockout</a>
+                </div>
+              </div>
+            </li>
+            <li>
+                <a href="{% url 'email' %}" class="nav-links"><i class="fas fa-envelope"></i>Contact Us</a>
+            </li>
+        </ul>
+        <a href="#" class="logo"><i class="fa fa-phone" aria-hidden="true"></i>0488 602 271</a>
+      </nav>
 
-      <h3  class="navimg" style="text-align: right; text-align: bottom">0488 602 271</h3>
-      <!--<img class="navimg" src="/static/statewidera/images/statewidelogo_sm_red.png" alt="logo" >-->
-      <a href="javascript:void(0);" style="font-size:25px;" class="icon" onclick="myFunction()">&#9776;
-      </a>
-  </div>
+
+
 {% block content %}
 
 
@@ -95,15 +113,36 @@
 
       <!-- Footer -->
       <script>
-      function myFunction() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-              x.className += " responsive";
-          } else {
-              x.className = "topnav";
-          }
-      }
+        let mainNav = document.getElementById('js-menu');
+        let navBarToggle = document.getElementById('js-navbar-toggle');
+
+        navBarToggle.addEventListener('click', function () {
+
+            mainNav.classList.toggle('active');
+        });
       </script>
+      <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
 
 
 
