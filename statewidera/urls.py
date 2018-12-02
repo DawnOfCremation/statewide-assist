@@ -20,6 +20,7 @@ urlpatterns = [
     path('faq/', faq.views.faq, name='faq'),
     #-----------------------------------------------
     path('', service.views.home, name='home'),
+    path('post/', service.views.home, name='post'),
     path('services/', service.views.services, name='services'),
     path('', include('contact.urls')),
     path('', include('postcode.urls')),
