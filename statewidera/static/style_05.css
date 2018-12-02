@@ -5,6 +5,12 @@ body {
   /*min-width: 992px !important;*/
 }
 
+.container-fluid{
+  border: solid 1px yellow;
+  margin:0;
+  padding:0;
+}
+
 #background {
     background: url('statewidera/images/statw_carosel_im_04.jpg');
     background-repeat: no-repeat;
