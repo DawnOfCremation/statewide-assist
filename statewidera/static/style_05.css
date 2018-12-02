@@ -1,8 +1,9 @@
-body {
-  margin:0;
-  font-family:Arial;
-  /*min-width:600px;*/
-  /*min-width: 992px !important;*/
+html, body {
+     font-size: 40px;
+     margin:0; /* remove default margin */
+     padding:0; /* remove default padding */
+     width:100%; /* take full browser width */
+     height:100%; /* take full browser height*/
 }
 
 .container-fluid{
