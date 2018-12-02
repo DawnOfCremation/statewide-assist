@@ -1,5 +1,4 @@
 html, body {
-     font-size: 40px;
      margin:0; /* remove default margin */
      padding:0; /* remove default padding */
      width:100%; /* take full browser width */
@@ -36,8 +35,8 @@ html, body {
   }
 
   .navbar {
-      /*font-size: 12px;
-      background-image: linear-gradient(260deg, #4d2600 0%, #261a0d   100%);
+      font-size: 12px;
+      /*background-image: linear-gradient(260deg, #4d2600 0%, #261a0d   100%);
       border: 1px solid rgba(0, 0, 0, 0.2);*/
       background-color: #1a1a1a;
       padding: 25px 0 25px 0;
@@ -136,7 +135,6 @@ html, body {
 
     .navbar {
         background-color: #1a1a1a;
-
         display: flex;
         justify-content: space-between;
         height: 50px;
