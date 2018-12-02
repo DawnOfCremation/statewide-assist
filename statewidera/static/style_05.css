@@ -31,7 +31,7 @@ html, body {
 
   * {
       /*box-sizing: border-box;*/
-      font-size: 8px;
+      font-size: 16px;
       padding: 0;
       margin: 0;
   }
@@ -70,6 +70,7 @@ html, body {
     background-color:#1a1a1a;
     color: rgba(255, 255, 255, 0.7);
     padding-bottom: 25px;
+
 
   }
 
@@ -223,7 +224,7 @@ html, body {
     }
 
     .dropdown-content {
-        font-size: 12px;
+        font-size: 18px;
         display: none;
         position: absolute;
         background-color: #f1f1f1;
