@@ -364,6 +364,7 @@ html, body {
   grid-auto-rows: 70px;
   grid-gap: 0.1em;
 }
+
 .nested > div{
   /*border: #333 1px solid;*/
   padding:0 1em 1em 1em;
@@ -380,17 +381,17 @@ html, body {
   grid-auto-columns: minmax(200px, auto);
   /*border: solid 1px green;*/
 }
+
 .jumb-item2{
   max-width: 400px;
 }
-
-
 
 
 .page-footer{
 
   background-color: #4d4d4d;
 }
+
 .cbodlink{
   display: flex;
   justify-content: space-between;
@@ -403,16 +404,15 @@ html, body {
 }
 
 .card-body > a{
-
   padding-right: 20px;
   /*border: solid 1px green;*/
   display: inline-block;
-
 }
 
 .fa{
   padding-bottom: 1em;
 }
+
 .paymentmthd{
   width: 400px;
   /*border: solid 1px red;*/
@@ -459,6 +459,7 @@ html, body {
   color: #333333;
   text-decoration: none;
 }
+
 .show{
   display: flex;
     flex-wrap: wrap;
@@ -469,8 +470,6 @@ html, body {
   display: flex;
   align-items: flex-end;
 }
-
-
 
 .grid-container{
   display: flex;
@@ -487,8 +486,8 @@ html, body {
 
 .item {
   align-self: center;
-
 }
+
 .item-1{
   align-self: flex-start;
   padding: 0px 20px 50px 0;
@@ -513,7 +512,6 @@ html, body {
 
 .contact-item{
   align-self: center;
-
 }
 
 
