@@ -127,6 +127,10 @@ html, body {
   .item-1{
     width: 100%;
   }
+  .jumb-item1{
+    max-width: 100%;
+
+  }
 }
 
 
@@ -218,7 +222,7 @@ html, body {
         color: rgba(255, 255, 255, 1);
         text-decoration: none;
         display: inline-flex;
-        background-color: red;
+        background-color: #555;
     }
 
     .dropdown {
@@ -330,7 +334,6 @@ html, body {
 
 
 .active {
-  background-color: #cc0000;
   color: white;
 }
 
@@ -496,7 +499,7 @@ html, body {
 }
 
 .postcodeWrapper{
-  border: red 1px solid;
+
   display: flex;
   align-items: flex-end;
 }
