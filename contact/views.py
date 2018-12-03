@@ -34,13 +34,16 @@ def emailView(request):
             mobile_number = form.cleaned_data['mobile_number']
             message = form.cleaned_data['message']
             package = 'Email: ' + your_email + 'Ph: ' + mobile_number +'Message: ' + message
-            try:
-                send_mail(subject, package, your_email, ['damians@gmail.com'],
-                fail_silently=False,)
-            except BadHeaderError:
+            if result['success']:
+                try:
+                    send_mail(subject, package, your_email, ['damians@gmail.com'],
+                    fail_silently=False,)
+                except BadHeaderError:
+                    return HttpResponse('Invalid header found.')
+                return redirect('success')
+            else:
                 messages.error(request, 'Invalid reCAPTCHA. Please try again.')
-                return HttpResponse('Invalid header found.')
-            return redirect('success')
+
     return render(request, "email.html", {'form': form})
 
 def successView(request):
