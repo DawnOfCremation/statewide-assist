@@ -146,6 +146,10 @@ html, body {
     justify-content: start;
   }
 
+  .card{
+    width: 300px;
+  }
+
 }
 
 
@@ -456,6 +460,7 @@ html, body {
 
 .card-body > a{
   padding-right: 20px;
+  width: 100px;
   /*border: solid 1px green;*/
   display: inline-block;
 }
