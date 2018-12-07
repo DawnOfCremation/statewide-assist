@@ -10,7 +10,7 @@
   <a  href="#about"><i class="fab fa-facebook fa-2x" style="padding-right: 5px"></i></a>
   <a  href="{% url 'email' %}"><i class="fas fa-envelope-square fa-2x"></i></a>
 </div>
-<div class="ext5"><!--beginning of grey seperator-->
+
 
   <br>
 
@@ -21,7 +21,7 @@
   <div class="wrapper"><!--beginning of wrapper-->
     {% for service in services.all %}
     <div>
-      <div class="card  h-100" >
+      <div class="card  " >
         <img class="card-img-top" src="{{ service.image.url }}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{ service.title }}</h5>
@@ -58,6 +58,6 @@
   </div>
   </div>
 
-</div ><!--end of grey seperator-->
+
 
 {% endblock %}
