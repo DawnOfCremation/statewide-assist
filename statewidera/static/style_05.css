@@ -134,8 +134,18 @@ html, body {
   }
   .jumb-item1{
     max-width: 100%;
-
   }
+
+  .nested{
+    display:grid;
+
+    grid-row-gap: 1px;
+    grid-column-gap: 9px;
+    grid-template-columns: 100px 100px 100px;
+    grid-auto-flow: row;
+    justify-content: start;
+  }
+
 }
 
 
@@ -409,12 +419,15 @@ html, body {
   background:#ddd
 }*/
 
+/*
 .nested{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
   grid-auto-rows: 50px;
   grid-gap: 0.1em;
 }
+*/
+
 
 .nested > div{
   /*border: #333 1px solid;*/
@@ -449,14 +462,6 @@ html, body {
 
 .fa{
   padding-bottom: 1em;
-}
-
-.paymentmthd{
-  width: 400px;
-  /*border: solid 1px red;*/
-  margin:auto;
-  padding-top: 50px;
-  text-align: center;
 }
 
 .copy{
