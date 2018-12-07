@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 
 
 
+
 ADMIN_SITE_HEADER = "Statewide Administration"
 # Application definition
 
@@ -77,6 +78,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'statewidera.wsgi.application'
 

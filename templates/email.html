@@ -46,9 +46,17 @@
                         </div>
                         <br />
                         <div class="g-recaptcha" data-sitekey="6LcCQ30UAAAAAHXFjE5qWux7ts9LiYDtJV-UUE4i"></div>
+                        {% if messages %}
+                          <ul>
+                             {% for message in messages %}
+                               <li>{{ message }}</li>
+                             {% endfor %}
+                          </ul>
+                          {% endif %}
                     </form>
                     {% endblock %}
-                </div
+                </div>
+
                 </p>
 
               </div>
@@ -68,21 +76,22 @@
 
           <div class="container ext2" >
 
-      <div class="paymentmthd">
-        <div><h5>Payment methods:</h5></div>
-        <hr class="paymenthr">
-        <div class="nested">
-                <div>
-                  <img src="/static/statewidera/images/visa.png" alt="visa">
+            <div class="paymentmthd">
+              <div><h5>Payment methods:</h5></div>
+              <hr class="paymenthr">
+              <div class="nested">
+                  <div>
+                    <img class="pay" src="/static/statewidera/images/visa.png" alt="visa">
+                  </div>
+                  <div>
+                    <img class="pay" src="/static/statewidera/images/MasterCard-Logo.png" alt="master card">
+                  </div>
+                  <div>
+                    <img class="pay" src="/static/statewidera/images/eftposLogo.png" alt="eftpos">
+                  </div>
                 </div>
-                <div>
-                  <img src="/static/statewidera/images/MasterCard-Logo.png" alt="master card">
-                </div>
-                <div>
-                  <img src="/static/statewidera/images/eftposLogo.png" alt="eftpos">
-                </div>
-              </div>
-          </div>
+                <hr class="paymenthr">
+            </div>
           </div>
           </div>
         </div ><!--end of grey seperator-->

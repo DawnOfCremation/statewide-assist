@@ -1,9 +1,13 @@
 from django.contrib import admin
 from django.urls import path
 
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 from .views import myView, faqPostCode, home
 
+
 urlpatterns = [
+
     #path('', myView, name='postcode'),
     #path('', home, name='home'),#---->
     #path('', myView, name='myView'),

@@ -9,7 +9,7 @@
   <a  href="{% url 'email' %}"><i class="fas fa-envelope-square fa-2x"></i></a>
 </div>
 
-      <div class="cover-container  container-fluid" >
+
                 <div class="container" >
                     <!-- Example row of columns -->
 
@@ -22,7 +22,7 @@
                         </div>
                         <div class="card-body">
                           <h4 class="card-title">Covering the whole Sydney metropolitan area.</h4>
-                          <p class="card-text">Emergency roadside assistance when you need it. <br>No joining fee, No membership. we offer a premium service at compedative rates to get you back on the road as fast as possible. <h5 class="text-danger">Pay as you go</h5> Giving you that peace mind knowing we are just a call away 24hrs a day, 7 days a week. If we are unable to get your vehicle going, we will also help with organising your vehicle to be towed to a destination of your choice if needed.</p>
+                          <p class="card-text">Emergency roadside assistance when you need it. <br>No joining fee, No membership. we offer a premium service at competitive rates to get you back on the road as fast as possible. <h5 class="text-danger">Pay as you go</h5> Giving you that peace mind knowing we are just a call away 24hrs a day, 7 days a week. If we are unable to get your vehicle going, we will also help with organising your vehicle to be towed to a destination of your choice if needed.</p>
 
                         </div>
                       </div>
@@ -60,17 +60,77 @@
                     </div>
 
                   </div>
+
+                  <div class="container">
+                    <h4 class="card-title">Areas covered.</h4>
+                     <div id='map' width="100%" style='height:300px'></div>
+                     <script>
+
+                      mapboxgl.accessToken = '{{ mapbox_access_token }}';
+                      var bounds = [
+                          [-36.381093, 148.982513 ]// Southwest coordinates
+                          [-30.285211, 153.099076 ],// Northeast coordinate
+
+                      ];
+
+
+                      var map = new mapboxgl.Map({
+                       container: 'map',
+                       style: 'mapbox://styles/mapbox/streets-v10',
+                       center: [151.137, -33.8685],
+                       minZoom: 7,
+                        maxZoom: 15,
+                       //maxBounds: bounds // Sets bounds as max
+                      });
+
+                      map.on('load', function () {
+
+                          map.addLayer({
+                              'id': 'maine',
+                              'type': 'fill',
+                              'source': {
+                                  'type': 'geojson',
+                                  'data': {
+                                      'type': 'Feature',
+                                      'geometry': {
+                                          'type': 'Polygon',
+                                          'coordinates': [[[151.297009, -33.722659],
+                                                  [151.099459,-33.672363],
+                                                  [150.882105, -33.478953],
+                                                  [150.429275, -33.715658],
+                                                  [150.465680, -34.064596],
+                                                  [150.530585, -34.370233],
+                                                  [150.898471, -34.485271],
+                                                  [151.033618, -34.190331],
+                                                  [151.242455, -33.978869],
+                                                  [151.285454, -33.891915]
+                                              ]]
+                                      }
+                                  }
+                              },
+                              'layout': {},
+                              'paint': {
+                                  'fill-color': '#ff6666',
+                                  'fill-opacity': 0.3,
+                                  'fill-outline-color': '#39ac39'
+                              }
+                          });
+                      });
+                     </script>
                 </div>
-              </div>
+                </div>
+
 
 
         <div class="ext3"><!--beginning of grey seperator-->
           <div class="container">
-            <h4 class="services-head">SERVICES</h4>
+
+
           </div>
           <div class="cover-container  container-fluid" >
 
             <div class="container ext2">
+              <h4 class="card-title">Services.</h4>
           <div class="wrapper"><!--beginning of wrapper-->
             {% for service in services.all %}
 

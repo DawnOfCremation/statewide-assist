@@ -1,23 +1,18 @@
-
-function myFunct(){
-	document.getElementById("myPostCode").innerHTML = "Add your current breakdown location's post code below to check if the area is covered by us.";
+function myFunction() {
+		document.getElementById("myDropdown").classList.toggle("show");
 }
 
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+	if (!event.target.matches('.dropbtn')) {
 
-
-function myPost(){
-
-	var originalPost = document.getElementById("checkpost").value;
-  if (originalPost){
-    if(originalPost >= 2000 && originalPost <= 2770){
-
-        document.getElementById("myPostCode").innerHTML = "Your current location is covered call for assistance on 0488602271";
-    } else{
-      document.getElementById("myPostCode").innerHTML = "Sorry we don't cover that area";
-    }
-  }else{
-    alert("Please put a valid postcode in " );
-
-	  }
-
+		var dropdowns = document.getElementsByClassName("dropdown-content");
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if (openDropdown.classList.contains('show')) {
+				openDropdown.classList.remove('show');
+			}
+		}
+	}
 }

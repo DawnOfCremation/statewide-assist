@@ -1,6 +1,7 @@
 #postcode View File
 from django.shortcuts import render
 from .models import Postcode
+from .forms import PostcodeForm
 from faq.models import Faq
 from service.models import Service
 import service.views
@@ -32,6 +33,7 @@ def myView(request):
     print(PostCodeList)
     #if request.method == 'POST' and 'input' in request.POST:
     return render(request, 'home.html',{'services':services,'verdict': verdict})
+
 
 
 def faqPostCode(request):
