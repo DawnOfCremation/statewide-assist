@@ -10,13 +10,14 @@
 </div>
 
 
-                <div class="container" >
+
                     <!-- Example row of columns -->
 
+  <div class="container">
 
                   <div class="jumb-home">
                     <div class="jumbhome-item1">
-                      <div class="card border-light ">
+                      <div class="card border-light" >
                         <div class="card-header">
                           <h1>24 / 7 ROADSIDE ASSISTANCE</h1>
                         </div>
@@ -61,7 +62,7 @@
 
                   </div>
 
-                  <div class="container">
+
                     <h4 class="card-title">Areas covered.</h4>
                      <div id='map' width="100%" style='height:300px'></div>
                      <script>
@@ -118,7 +119,7 @@
                       });
                      </script>
                 </div>
-                </div>
+
 
 
 
@@ -133,9 +134,7 @@
               <h4 class="card-title">Services.</h4>
           <div class="wrapper"><!--beginning of wrapper-->
             {% for service in services.all %}
-
-            <div>
-              <div class="card  h-100" >
+              <div class="card h-100" ><!--style="width: 100%;"-->
                 <img class="card-img-top" src="{{ service.image.url }}" alt="Card image cap" >
                 <div class="card-body">
                   <h5 class="card-title">{{ service.title }}</h5>
@@ -151,7 +150,7 @@
 
                 </div>
               </div>
-            </div>
+
             {% endfor %}
 
 

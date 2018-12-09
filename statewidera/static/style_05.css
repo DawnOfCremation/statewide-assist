@@ -75,8 +75,6 @@ html, body {
     background-color:#1a1a1a;
     color: rgba(255, 255, 255, 0.7);
     padding-bottom: 25px;
-
-
   }
 
   .nav-links {
@@ -146,10 +144,34 @@ html, body {
     justify-content: start;
   }
 
-  .card{
-    width: 300px;
+  .jumb-home{
+    width: 100%;
+    /*border: solid 1px green;*/
+  }
+  .jumbhome-item2{
+    width: 100%;
+    /*border: solid 1px red;*/
   }
 
+  .border-light{
+    max-width: 100%;
+  }
+
+  .card{
+    width: 94%;
+    max-width: 94%;
+  }
+
+  .card-img-top {
+    display:block;
+    max-width: 100%;
+  }
+
+  .card-body > a{
+
+    /*border: solid 1px green;*/
+    display: inline-block;
+  }
 }
 
 
@@ -279,9 +301,8 @@ html, body {
 
     .jumb-home{
       display:grid;
-      margin:auto;
-      margin-top: 80px;
-      grid-template-columns: 75% 25%;
+      margin: 80px auto;
+
       grid-template-columns: repeat(auto-fill, minmax(400px, auto));
       grid-column-gap: 2em;
       grid-auto-columns: minmax(200px, auto);
@@ -308,6 +329,29 @@ html, body {
 
     }
 
+    .card{
+      width: 100%;
+    }
+
+    .paymentmthd{
+      padding-top: 50px;
+      padding-bottom: 20px;
+      margin-bottom: 0;
+      text-align: center
+    }
+    .pay{
+      margin-bottom: 0px;
+      text-align: center
+    }
+    .nested{
+      display:grid;
+
+      grid-row-gap: 1px;
+      grid-column-gap: 9px;
+      grid-template-columns: 100px 100px 100px;
+      grid-auto-flow: column;
+      justify-content: center;
+    }
 
   }
 
@@ -392,14 +436,11 @@ html, body {
   padding-bottom: 20px;
 }
 
-.servcards{
-  margin-bottom: 20px;
-  border: solid 1px green;
-}
 
 
 .wrapper{
-  /*width: 1200px;*/
+  /*border: solid 1px green;
+  width: 1200px;*/
   margin:auto;
   display:grid;
   /*grid-template-columns: 33.3% 33.3% 33.3%;*/
@@ -411,11 +452,12 @@ html, body {
   grid-row-gap: 1em;
   /*grid-auto-rows: 200px;*/
   grid-auto-rows: minmax(100px, auto);
+  padding: 0;
 }
 
-.wrapper >div{
+.servicediv{
   /*background: #eee;*/
-  padding:1em;
+  padding: 5px;
 }
 
 /*
@@ -459,8 +501,7 @@ html, body {
 }
 
 .card-body > a{
-  padding-right: 20px;
-  width: 100px;
+  width: 100%;
   /*border: solid 1px green;*/
   display: inline-block;
 }
@@ -491,7 +532,7 @@ html, body {
   grid-template-columns: repeat(auto-fill, minmax(400px, auto));
   grid-column-gap: 2em;
   grid-auto-columns: minmax(200px, auto);
-  border: solid 1px green;
+  /*border: solid 1px green;*/
 }
 /*
 .pos{
@@ -564,6 +605,6 @@ html, body {
 
 
 .containercont{
-  border: solid 1px red;
+  /*border: solid 1px red;*/
   width:100%;
 }
