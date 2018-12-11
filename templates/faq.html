@@ -15,11 +15,12 @@
       <div class="grid-container">
 
           <div class="item item-1">
-            <h4>FREQUENTLY ASKED QUESTIONS</h4>
-            <div class="accordion" id="accordionExample">
+            <div>
+              <h5>FREQUENTLY ASKED QUESTIONS</h5>
+            </div>
               <div class="accordion" id="accordionExample">
                 {% for faq in faqs.all %}
-                <div class="card">
+                <div class="card faqcard">
                   <div class="card-header" id="{{ faq.heading_number }}">
 
                     <h5 class="mb-0">
@@ -35,7 +36,7 @@
                 </div>
                 {% endfor %}
               </div>
-            </div>
+
           </div>
           <div class="item item-2">
             <div class="card h-80 text-white bg-info ">
@@ -50,14 +51,28 @@
                     </p>
                 </div>
 
-                <form action="{% url 'faqpostcode' %}" class="card p-2 bg-light text-dark">
+                <form id="post_form"  class="card p-2 bg-light text-dark">{% csrf_token %}
                   <div class="input-group">
-                    <input type="number" step="1" class="form-control" name="fulltext" placeholder="Post code here">
+                    <input type="number"  class="form-control" id="checkpost"  placeholder="Post code here">
                     <div class="input-group-append">
-                      <button type="submit" class="btn btn-secondary" onmouseup="myPost()" >Check</button>
+                      <button type="submit" class="btn btn-secondary" value="SUBMIT">Check</button>
                     </div>
                   </div>
                 </form>
+                <div id="myModal" class="modal fade" tabindex="-1" role="dialog" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">PostCode Search Result</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="modal-body">
+                            </div>
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
               </div>
             </div>
           </div>

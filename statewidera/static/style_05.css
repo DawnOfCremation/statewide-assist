@@ -118,14 +118,16 @@ html, body {
     text-align: center
   }
   .grid-container{
-    display: flex;
+    /*display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
     padding-top: 100px;
     padding-left: 10%;
-    padding-right: 10%;
+    padding-right: 10%;*/
+    width: auto;
     /*background-color: #2196F3;*/
+    /*border: solid 1px green;*/
   }
   .item-1{
     width: 100%;
@@ -136,7 +138,6 @@ html, body {
 
   .nested{
     display:grid;
-
     grid-row-gap: 1px;
     grid-column-gap: 9px;
     grid-template-columns: 100px 100px 100px;
@@ -157,20 +158,35 @@ html, body {
     max-width: 100%;
   }
 
-  .card{
-    width: 94%;
-    max-width: 94%;
+  .faqcard{
+    width: 100%;
   }
 
   .card-img-top {
     display:block;
-    max-width: 100%;
+    /*max-width: 100%;*/
   }
 
   .card-body > a{
 
     /*border: solid 1px green;*/
     display: inline-block;
+  }
+
+  .item {
+    align-self: center;
+
+  }
+
+  .item-1{
+    align-self: flex-start;
+    padding: 5px 0px 5px 0px;
+    flex-grow: 1;
+  }
+
+  .item-2{
+    align-self: flex-start;
+    padding-top: 36px;
   }
 }
 
@@ -329,10 +345,11 @@ html, body {
 
     }
 
+/*
     .card{
       width: 100%;
     }
-
+*/
     .paymentmthd{
       padding-top: 50px;
       padding-bottom: 20px;
@@ -351,6 +368,35 @@ html, body {
       grid-template-columns: 100px 100px 100px;
       grid-auto-flow: column;
       justify-content: center;
+    }
+
+    .grid-container{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 100px;
+      padding-left: 10%;
+      padding-right: 10%;
+      padding-top: 50px;
+      /*background-color: #2196F3;*/
+    }
+
+    .item {
+      align-self: center;
+
+    }
+
+    .item-1{
+      align-self: flex-start;
+      padding: 0px 20px 50px 0;
+      flex-grow: 1;
+    }
+
+    .item-2{
+      align-self: flex-start;
+      padding-top: 36px;
     }
 
   }
@@ -501,8 +547,8 @@ html, body {
 }
 
 .card-body > a{
-  width: 100%;
-  /*border: solid 1px green;*/
+  /*width: 100%;
+  border: solid 1px green;*/
   display: inline-block;
 }
 
@@ -560,33 +606,9 @@ html, body {
   align-items: flex-end;
 }
 
-.grid-container{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 100px;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 50px;
-  /*background-color: #2196F3;*/
-}
 
-.item {
-  align-self: center;
-}
 
-.item-1{
-  align-self: flex-start;
-  padding: 0px 20px 50px 0;
-  flex-grow: 1;
-}
 
-.item-2{
-  align-self: flex-start;
-  padding-top: 36px;
-}
 /*------CONTACT---------------------*/
 
 .grid-contact{
@@ -596,15 +618,24 @@ html, body {
   justify-content: center;
   align-items: center;
   padding-top: 100px;
-  /*background-color: #2196F3;*/
+
 }
 
 .contact-item{
   align-self: center;
 }
 
-
 .containercont{
   /*border: solid 1px red;*/
   width:100%;
+}
+
+.modal-header {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.modal-body {
+  background-color: white;
+  color: black;
 }

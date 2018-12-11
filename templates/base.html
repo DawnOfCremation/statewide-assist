@@ -153,6 +153,29 @@
         }
         </script>
 
+        <script>
+
+          $(document).on('submit','#post_form',function(e){
+            e.preventDefault();
+
+            $.ajax({
+              type:'GET',
+              //async: false,
+              url:'/postcodecheck/',
+              data:{
+                checkpost:$('#checkpost').val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+              },
+              success:function(data) {
+                $('.modal-body').text(data);
+                // show modal
+                $('#myModal').modal('show');
+              },
+            });
+          });
+
+        </script>
+
 
 
     <!-- Bootstrap core JavaScript

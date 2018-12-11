@@ -1,5 +1,8 @@
 #postcode View File
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 from django.shortcuts import render
+from django.http import HttpResponse
 from .models import Postcode
 from .forms import PostcodeForm
 from faq.models import Faq
@@ -16,21 +19,21 @@ def home(request):#dont think this ones is being used
 
 def myView(request):
     services = Service.objects
-    fulltext = request.GET['fulltext']
+    #fulltext = request.GET['fulltext']
     mypostcode = Postcode.objects
     verdict = "Enter your post code below to check if the area is covered by us."
-    PostCodeList = []
+    #PostCodeList = []
 
-    for i in Postcode.objects.all():
-        postcodeStr = i.postcode
-        PostCodeList.append(postcodeStr)
+    #for i in Postcode.objects.all():
+    #    postcodeStr = i.postcode
+    #    PostCodeList.append(postcodeStr)
 
-    if fulltext in PostCodeList:
-        verdict = "Yes you are covered, call us now on 0488 602 271"
-    else:
-        verdict = "Sorry your area is not covered!"
+    #if fulltext in PostCodeList:
+    #    verdict = "Yes you are covered, call us now on 0488 602 271"
+    #else:
+    #    verdict = "Sorry your area is not covered!"
 
-    print(PostCodeList)
+    #print(PostCodeList)
     #if request.method == 'POST' and 'input' in request.POST:
     return render(request, 'home.html',{'services':services,'verdict': verdict})
 
@@ -39,20 +42,42 @@ def myView(request):
 def faqPostCode(request):
     faqs = Faq.objects
     services = Service.objects
-    fulltext = request.GET['fulltext']
-    mypostcode = Postcode.objects
+    #fulltext = request.GET['fulltext']
+    #mypostcode = Postcode.objects
     verdict = "Enter your post code below to check if the area is covered by us."
-    PostCodeList = []
+    #PostCodeList = []
 
-    for i in Postcode.objects.all():
-        postcodeStr = i.postcode
-        PostCodeList.append(postcodeStr)
+    #for i in Postcode.objects.all():
+    #    postcodeStr = i.postcode
+    #    PostCodeList.append(postcodeStr)
 
-    if fulltext in PostCodeList:
-        verdict = "Yes you are covered, call us now on 0488 602 271"
-    else:
-        verdict = "Sorry your area is not covered!"
+    #if fulltext in PostCodeList:
+    #    verdict = "Yes you are covered, call us now on 0488 602 271"
+    #else:
+    #    verdict = "Sorry your area is not covered!"
 
-    print(PostCodeList)
+    #print(PostCodeList)
     #if request.method == 'POST' and 'input' in request.POST:
     return render(request, 'faq.html',{'faqs':faqs, 'services':services,'verdict': verdict})
+
+
+#@csrf_exempt
+def postCodeCheck(request):
+    #if request.method == 'GET':
+    if request.is_ajax():
+        code = request.GET['checkpost']
+        print('my entered code - ' + code)
+        PostCodeList = []
+
+        for i in Postcode.objects.all():
+            postcodeStr = i.postcode
+            PostCodeList.append(postcodeStr)
+
+        if code in PostCodeList:
+            #return HttpResponse('')
+            return HttpResponse('We cover your location please call 0488 602 271 for assistance')
+            print('Yes indeed')
+
+        else:
+            return HttpResponse("Unfortunately we don't cover that area")
+            print('Nope not working')
