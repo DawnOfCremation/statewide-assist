@@ -26,33 +26,33 @@ def services(request):
 
 def serviceGen(request):
     services = Service.objects
-    myid = 1
+    myid = 6
     return render(request, 'service.html', {'services':services, 'myid':myid})
 
 def serviceBat(request):
     services = Service.objects
-    myid = 2
+    myid = 1
     return render(request, 'service.html', {'services':services, 'myid':myid})
 
 
 def serviceJump(request):
     services = Service.objects
-    myid = 3
+    myid = 2
     return render(request, 'service.html', {'services':services, 'myid':myid})
 
 
 def serviceFlat(request):
     services = Service.objects
-    myid = 4
+    myid = 3
     return render(request, 'service.html', {'services':services, 'myid':myid})
 
 
 def serviceFuel(request):
     services = Service.objects
-    myid = 5
+    myid = 4
     return render(request, 'service.html', {'services':services, 'myid':myid})
 
 def serviceLock(request):
     services = Service.objects
-    myid = 6
+    myid = 5
     return render(request, 'service.html', {'services':services, 'myid':myid})
