@@ -11,7 +11,7 @@ def home(request):
     services = Service.objects
     mypostcode = Postcode.objects
     verdict = "Add your current breakdown location's post code below to check if the area is covered by us!!."
-    mapbox_access_token = settings.MAPBOX_MAP_ID
+    mapbox_access_token = local_settings.MAPBOX_MAP_ID
     print (type(mapbox_access_token))
     return render(request, 'home.html', {'services':services, 'verdict': verdict, 'mapbox_access_token': mapbox_access_token })
 
