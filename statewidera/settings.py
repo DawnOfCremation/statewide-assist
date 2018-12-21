@@ -27,8 +27,6 @@ DEBUG = False
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ALLOWED_HOSTS = []
-
 
 ADMIN_SITE_HEADER = "Statewide Administration"
 # Application definition
