@@ -4,7 +4,7 @@ from .models import Service
 from postcode.models import Postcode
 #from postcode.views import myView
 import postcode.views
-from django.conf import settings
+from django.conf import local_settings
 
 
 def home(request):
