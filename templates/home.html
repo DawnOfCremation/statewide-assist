@@ -5,7 +5,6 @@
 
 {% block content %}
 <div class="faceb">
-  <a  href="#about"><i class="fab fa-facebook fa-2x" style="padding-right: 5px"></i></a>
   <a  href="{% url 'email' %}"><i class="fas fa-envelope-square fa-2x"></i></a>
 </div>
 
@@ -19,9 +18,9 @@
                     <div class="jumbhome-item1">
                       <div class="card border-light" >
                         <div class="card-header">
-                          <h1>24 / 7 ROADSIDE ASSISTANCE</h1>
+                          <h1><i>24 / 7 ROADSIDE ASSISTANCE</i></h1>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body title">
                           <h4 class="card-title">Covering the whole Sydney metropolitan area.</h4>
                           <p class="card-text">Emergency roadside assistance when you need it. <br>No joining fee, No membership. we offer a premium service at competitive rates to get you back on the road as fast as possible. <h5 class="text-danger">Pay as you go</h5> Giving you that peace mind knowing we are just a call away 24hrs a day, 7 days a week. If we are unable to get your vehicle going, we will also help with organising your vehicle to be towed to a destination of your choice if needed.</p>
 
@@ -77,7 +76,7 @@
 
 
                     <h4 class="card-title">Areas covered.</h4>
-                     <div id='map' width="100%" style='height:300px'></div>
+                     <div id='map' width="100%" style='height:400px'></div>
                      <script>
 
                       mapboxgl.accessToken = '{{ mapbox_access_token }}';
@@ -86,15 +85,21 @@
                           [-30.285211, 153.099076 ],// Northeast coordinate
 
                       ];
-
+                      var bounds = [
+                          [149.833406, -35.365573], // Southwest coordinates
+                          [151.791907, -32.926805]  // Northeast coordinates
+                          //-33.275079, 151.181573
+                          //-34.898706, 150.596201
+                      ];
 
                       var map = new mapboxgl.Map({
                        container: 'map',
-                       style: 'mapbox://styles/mapbox/streets-v10',
-                       center: [151.137, -33.8685],
+                       style: 'mapbox://styles/mapbox/streets-v9',
+                       //center: [151.137, -33.8685],
+                       center: [150.999415, -33.827810],
                        minZoom: 7,
-                        maxZoom: 15,
-                       //maxBounds: bounds // Sets bounds as max
+                       maxZoom: 30,
+                       maxBounds: bounds // Sets bounds as max
                       });
 
                       map.on('load', function () {
@@ -137,11 +142,8 @@
 
 
         <div class="ext3"><!--beginning of grey seperator-->
-          <div class="container">
 
 
-          </div>
-          <div class="cover-container  container-fluid" >
 
             <div class="container ext2">
               <h4 class="card-title">Services.</h4>
@@ -185,7 +187,7 @@
               <hr class="paymenthr">
           </div>
           </div>
-          </div>
+
         </div ><!--end of grey seperator-->
 
 
