@@ -12,6 +12,6 @@ urlpatterns = [
     path('service/battery_fuel', serviceFuel, name='serviceFuel'),
     path('service/battery_lockout', serviceLock, name='serviceLock'),
     path(r'^service/(?P<id>\d+)/$', servicesMore, name='servicesMore'),
-    
+
 
 ]

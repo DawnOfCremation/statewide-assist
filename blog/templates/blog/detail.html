@@ -1,0 +1,44 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% load static %}
+<!--<html lang="en">-->
+{% block content %}
+
+  <div class="container">
+    <br />
+    <br />
+<a href="{% url 'allblogs' %}" class="stretched-link"> < Blog Home</a>
+          <br />
+          <div class="card-body cbodlink">
+
+
+
+
+          </div>
+          <hr />
+          <h3 class="text-left  pt-3" >{{blog.title}}</h3>
+
+            <hr />
+            <p class="text-right">{{ blog.pub_date}}</p>
+            <br />
+            <p> {{ blog.body }}</p>
+            <br />
+            <br />
+
+            {% if blog.image %}
+            <img class="img-fluid" src="{{ blog.image.url }}">
+            {% endif %}
+
+            <hr />
+            <br />
+            <br />
+            <br />
+            <br />
+
+
+</div>
+  </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,57 @@
+<!doctype html>
+{% extends 'base.html' %}
+{% load static %}
+<!--<html lang="en">-->
+{% block content %}
+
+  <div class="container">
+    <br />
+    <br />
+        <h1 class="text-left  pt-3"><i>STATEWIDE BLOG</i></h1>
+        <br />
+        <br />
+          <h2>Latest Posts <i class="fas fa-arrow-alt-circle-down"></i> </h2>
+          <hr />
+          <br />
+          <br />
+
+
+            <div class="row mb-2">
+              {% for blog in blogs.all %}
+            <div class="col-md-6">
+              <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <h3 class="mb-2"><i>Featured post</i></h3>
+                  <a href="{% url 'detail' blog.id %}" class="mb-0" style="text-decoration: none"><strong >{{blog.title}}</strong></a>
+
+
+                  <div class="mb-1 text-muted">{{ blog.pub_date_pretty }}</div>
+                  <p class="card-text mb-auto">{{ blog.summary }}</p>
+                  <a href="{% url 'detail' blog.id %}" class="stretched-link">Continue reading</a>
+                  </div>
+                  <div class="col-auto d-none d-lg-block">
+
+                  {% if blog.image %}
+                  <img class="bd-placeholder-img" width="200" height="250" src="{{ blog.image.url }}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>
+                  {% endif %}
+
+                </div>
+              </div>
+
+            </div>
+            {% endfor %}
+
+</div>
+<br />
+<br />
+
+<br />
+<br />
+
+
+</div>
+  </div>
+
+
+
+{% endblock %}

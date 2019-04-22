@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#kvhlbu+@m17anoj)wx_4+6=2&pe49-5q3va_$86%l&@4bwn*='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -34,6 +36,7 @@ ADMIN_SITE_HEADER = "Statewide Administration"
 INSTALLED_APPS = [
     'faq.apps.FaqConfig',
     'service.apps.ServiceConfig',
+    'blog.apps.BlogConfig',
     'postcode.apps.PostcodeConfig',
     'contact.apps.ContactConfig',
     'django.contrib.admin',
