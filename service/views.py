@@ -26,33 +26,69 @@ def services(request):
 
 def serviceGen(request):
     services = Service.objects
-    myid = 1
+    #myid = 1
+    theTitle = "General Assistance"
+    for i in Service.objects.all():
+        myTitle = i.title
+        if myTitle == theTitle:
+            print(myTitle)
+            myid = i.id
     return render(request, 'service.html', {'services':services, 'myid':myid})
 
 def serviceBat(request):
     services = Service.objects
-    myid = 2
+    #myid = 1
+    theTitle = "Battery replacement"
+    for i in Service.objects.all():
+        myTitle = i.title
+        if myTitle == theTitle:
+            print(myTitle)
+            myid = i.id
     return render(request, 'service.html', {'services':services, 'myid':myid})
 
 
 def serviceJump(request):
     services = Service.objects
-    myid = 3
+    #myid = 3
+    theTitle = "Jump Start"
+    for i in Service.objects.all():
+        myTitle = i.title
+        if myTitle == theTitle:
+            print(myTitle)
+            myid = i.id
     return render(request, 'service.html', {'services':services, 'myid':myid})
 
 
 def serviceFlat(request):
     services = Service.objects
-    myid = 4
+    #myid = 4
+    theTitle = "Flat tyre"
+    for i in Service.objects.all():
+        myTitle = i.title
+        if myTitle == theTitle:
+            print(myTitle)
+            myid = i.id
     return render(request, 'service.html', {'services':services, 'myid':myid})
 
 
 def serviceFuel(request):
     services = Service.objects
-    myid = 5
+    #myid = 5
+    theTitle = "Fuel Delivery"
+    for i in Service.objects.all():
+        myTitle = i.title
+        if myTitle == theTitle:
+            print(myTitle)
+            myid = i.id
     return render(request, 'service.html', {'services':services, 'myid':myid})
 
 def serviceLock(request):
     services = Service.objects
-    myid = 6
+    #myid = 6
+    theTitle = "Lockout service"
+    for i in Service.objects.all():
+        myTitle = i.title
+        if myTitle == theTitle:
+            print(myTitle)
+            myid = i.id
     return render(request, 'service.html', {'services':services, 'myid':myid})
