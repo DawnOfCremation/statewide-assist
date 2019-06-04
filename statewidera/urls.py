@@ -17,6 +17,7 @@ admin.site.site_header = settings.ADMIN_SITE_HEADER
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('faq/', faq.views.faq, name='faq'),

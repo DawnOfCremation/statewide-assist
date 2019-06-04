@@ -26,7 +26,7 @@
 
 
                   <div class="mb-1 text-muted">{{ blog.pub_date_pretty }}</div>
-                  <p class="card-text mb-auto">{{ blog.summary }}</p>
+                  <p class="card-text mb-auto">{{ blog.summary | safe }}</p>
                   <a href="{% url 'detail' blog.id %}" class="stretched-link">Continue reading</a>
                   </div>
                   <div class="col-auto d-none d-lg-block">

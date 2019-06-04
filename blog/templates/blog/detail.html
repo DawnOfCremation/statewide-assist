@@ -1,4 +1,5 @@
 <!doctype html>
+<script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
 {% extends 'base.html' %}
 {% load static %}
 <!--<html lang="en">-->
@@ -21,7 +22,7 @@
             <hr />
             <p class="text-right">{{ blog.pub_date}}</p>
             <br />
-            <p> {{ blog.body }}</p>
+            <p> {{ blog.body |safe }}</p>
             <br />
             <br />
 
