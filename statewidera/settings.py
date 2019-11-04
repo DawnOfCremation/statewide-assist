@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
-
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -28,45 +26,24 @@ SECRET_KEY = '#kvhlbu+@m17anoj)wx_4+6=2&pe49-5q3va_$86%l&@4bwn*='
 DEBUG = True
 
 
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ALLOWED_HOSTS = []
 
 
-ADMIN_SITE_HEADER = "Statewide Administration"
 # Application definition
 
 INSTALLED_APPS = [
-    'faq.apps.FaqConfig',
-    'service.apps.ServiceConfig',
-    'blog.apps.BlogConfig',
-    'postcode.apps.PostcodeConfig',
     'contact.apps.ContactConfig',
+    'getassist.apps.GetassistConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ckeditor',
-    'ckeditor_uploader',
     'crispy_forms',
+
 ]
-
-####################################
-    ##  CKEDITOR CONFIGURATION ##
-####################################
-
-CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
-
-CKEDITOR_UPLOAD_PATH = 'uploads/'
-CKEDITOR_IMAGE_BACKEND = "pillow"
-
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': None,
-    },
-}
-
-###################################
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -97,8 +74,6 @@ TEMPLATES = [
         },
     },
 ]
-
-
 
 WSGI_APPLICATION = 'statewidera.wsgi.application'
 
@@ -162,7 +137,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 
-MEDIA_ROOT = (os.path.join(BASE_DIR, 'statewidera/media'))
+MEDIA_ROOT = (os.path.join(BASE_DIR, 'media'))
 MEDIA_URL = '/media/'
 
 try:
