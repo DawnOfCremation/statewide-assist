@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'contact.apps.ContactConfig',
-    'getassist.apps.GetassistConfig',
+    #'getassist.apps.GetassistConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
