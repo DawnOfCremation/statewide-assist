@@ -1,0 +1,24 @@
+SECRET_KEY = '#kvhlbu+@m17aHlpEDs88noj)wx_4+6=2&pe49-5q344va_$8StatEwId36%l&@4bwn*='
+
+ALLOWED_HOSTS = ['206.189.46.214','statewideroadsideassistance.com.au','www.statewideroadsideassistance.com.au','http://statewideroadsideassistance.com.au/']
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'statewidedb',
+        'USER': 'statewidersa',
+        'PASSWORD':'jumpstart',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LcCQ30UAAAAAHw-KCc94f73tOLOd1nqZYxTgrQW'
+MAPBOX_MAP_ID = 'pk.eyJ1IjoiZGF3bm9mY3JlbWF0aW9uIiwiYSI6ImNqcDh6b2gwMzAxemozcW04dHg4dmp3NW4ifQ.FgdNvvrj9LF1VJEZ3ADEJg'
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'dawnofcremation'
+EMAIL_HOST_PASSWORD = 'evildead666'
+SENDGRID_API_KEY = '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'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
