@@ -1,0 +1,200 @@
+<!doctype html>
+
+{% load static %}
+<!--<html lang="en">-->
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1382730-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-1382730-2');
+    </script>
+
+
+    <title>Statewide RSA</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+
+    <link rel="stylesheet" href="{% static 'style_05.css' %}">
+
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+
+    <div class="top-container" id="background">
+        <img src="/static/statewidera/images/statewidelogo_lrg_red.png" class="responsive">
+        <!--<h1 class="services-head" style="text-align: right; text-align: bottom">0488 602 271</h1>-->
+    </div>
+
+      <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+           <i class="fas fa-bars"></i>
+       </span>
+        <!--<a href="#" class="logo">logo</a>-->
+        <ul class="main-nav" id="js-menu">
+            <li>
+                <a href="{% url 'home' %}" class="nav-links"><i class="fas fa-home"></i>Home</a>
+            </li>
+            <li>
+
+              <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn"><i class="fa fa-wrench"></i>Services<i class="fa fa-caret-down"></i>
+              </button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a class="dropdown-item" href="{% url 'services' %}" >All Services</a>
+                  <a class="dropdown-item" href="{% url 'serviceGen' %}">General Assistance</a>
+                  <a class="dropdown-item" href="{% url 'serviceBat' %}">Battery replacement</a>
+                  <a class="dropdown-item" href="{% url 'serviceJump' %}">Jump starts</a>
+                  <a class="dropdown-item" href="{% url 'serviceFlat' %}">Flat Tyre</a>
+                  <a class="dropdown-item" href="{% url 'serviceFuel' %}">Fuel Supply</a>
+                  <a class="dropdown-item" href="{% url 'serviceLock' %}">Lockout</a>
+                </div>
+              </div>
+            </li>
+            <li>
+                <a href="{% url 'email' %}" class="nav-links"><i class="fas fa-envelope"></i>Contact Us</a>
+            </li>
+            <li>
+                <a href="{% url 'allblogs' %}" class="nav-links"><i class="fas fa-book-open"></i> Blog</a>
+            </li>
+            <li>
+                <a href="{% url 'faq' %}" class="nav-links"><i class="fas fa-exchange-alt"></i> Faq</a>
+            </li>
+        </ul>
+
+        <a href="tel:0488602271" class="logo"><i class="fa fa-phone" aria-hidden="true"></i>0488 602 271</a>
+
+      </nav>
+
+
+<div class="container-fluid" >
+{% block content %}
+
+
+
+
+
+
+{% endblock %}
+</div>
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small ">
+
+        <div style="background-color: #1a1a1a;">
+          <div class="container">
+
+            <!-- Grid row-->
+            <div class="row py-4 d-flex align-items-center">
+              <!-- Grid column -->
+              <div class="col-md-12 text-center ">
+
+                  <img src="/static/statewidera/images/statewidelogo_sm_red.png" class="img-fluid" alt="Responsive image"  >
+
+              </div>
+              <!-- Grid column -->
+
+
+            </div>
+          <!-- Footer Links -->
+
+          <!-- Copyright -->
+            <div class="footer-copyright text-center py-3 copy"><p>&copy; Statewide Roadside Assistance 2017-2018</p>
+            </div>
+          <!-- Copyright -->
+          </div>
+      </div>
+      </footer>
+
+
+
+      <!-- Footer -->
+      <script>
+        let mainNav = document.getElementById('js-menu');
+        let navBarToggle = document.getElementById('js-navbar-toggle');
+
+        navBarToggle.addEventListener('click', function () {
+
+            mainNav.classList.toggle('active');
+        });
+      </script>
+      <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+
+        <script>
+
+          $(document).on('submit','#post_form',function(e){
+            e.preventDefault();
+
+            $.ajax({
+              type:'GET',
+              //async: false,
+              url:'/postcodecheck/',
+              data:{
+                checkpost:$('#checkpost').val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+              },
+              success:function(data) {
+                $('.modal-body').text(data);
+                // show modal
+                $('#myModal').modal('show');
+              },
+            });
+          });
+
+        </script>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>
